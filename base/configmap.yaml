@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongo-dump-config
+data:
+  PORT: "5050"
+  AZURE_STORAGE_ACCOUNT: "mongobackupsza"
+  AZURE_STORAGE_ACCESS_KEY: "REPLACE_IN_CLUSTER"
+  AZURE_STORAGE_CONTAINER: "dumps"
