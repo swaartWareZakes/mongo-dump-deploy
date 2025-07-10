@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-dump-api
+  labels:
+    app: mongo-dump-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-dump-api
+  template:
+    metadata:
+      labels:
+        app: mongo-dump-api
+    spec:
+      containers:
+        - name: mongo-dump-api
+          image: swaartwarezakes/mongo-dump-api:latest
+          ports:
+            - containerPort: 5050
+          env:
+            - name: NODE_ENV
+              value: "production"
